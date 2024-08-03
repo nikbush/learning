@@ -1,6 +1,10 @@
 import sys
 
-symbol, x, y = sys.argv[1], sys.argv[2], sys.argv[3]
+try:
+    symbol, x, y = sys.argv[1], sys.argv[2], sys.argv[3]
+except:
+    print('error')
+    sys.exit()
 
 if (not x.isdigit()) or (not y.isdigit()):
     print('error')
