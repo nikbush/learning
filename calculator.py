@@ -1,39 +1,44 @@
 import sys
 
 try:
-    symbol, x, y = sys.argv[1], sys.argv[2], sys.argv[3]
+    symbol, num1, num2 = sys.argv[1], sys.argv[2], sys.argv[3]
 except:
     print('error')
     sys.exit()
 
-if (not x.isdigit()) or (not y.isdigit()):
+if (not num1.isdigit()) or (not num2.isdigit()):
     print('error')
     sys.exit()
 else:
-    x, y = int(x), int(y)
+    num1, num2 = int(num1), int(num2)
 
 
-def calc(symbol, x, y):
+def calc(symbol, num1, num2):
     if symbol == '+':
-        return print(x + y)
+        result = num1 + num2
     elif symbol == '-':
-        return print(x - y)
+        result = num1 - num2
     elif symbol == '*':
-        return print(x * y)
+        result = num1 * num2
     elif symbol == '/':
-        if y == 0:
-            return print("error")
-        return print(x / y)
+        if num2 == 0:
+            print('error')
+            sys.exit()
+        result = num1 / num2
     elif symbol == '//':
-        if y == 0:
-            return print("error")
-        return print(x // y)
+        if num2 == 0:
+            print('error')
+            sys.exit()
+        result = num1 // num2
     elif symbol == '%':
-        if y == 0:
-            return print("error")
-        return print(x % y)
+        if num2 == 0:
+            print('error')
+            sys.exit()
+        result = num1 % num2
     else:
-        return print("error")
+        print('error')
+        sys.exit()
+    return result
 
 
-calc(symbol, x, y)
+print(calc(symbol, num1, num2))
