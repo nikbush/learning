@@ -22,23 +22,25 @@ def calc(symbol, num1, num2):
         result = num1 * num2
     elif symbol == '/':
         if num2 == 0:
-            print('error')
-            sys.exit()
+            result = None
+            return result
         result = num1 / num2
     elif symbol == '//':
         if num2 == 0:
-            print('error')
-            sys.exit()
+            result = None
+            return result
         result = num1 // num2
     elif symbol == '%':
         if num2 == 0:
-            print('error')
-            sys.exit()
+            result = None
+            return result
         result = num1 % num2
     else:
-        print('error')
-        sys.exit()
+        result = None
+        return result
     return result
 
-
-print(calc(symbol, num1, num2))
+if calc(symbol, num1, num2) == None:
+    print('error')
+else:
+    print(calc(symbol, num1, num2))
